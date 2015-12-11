@@ -60,6 +60,35 @@ tester.run("no-doubled-negative", rule, {
                     column: 21
                 }
             ]
+        },
+        // d
+        {
+            text: "確かにそういった懸念はないことはない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないことはない",
+                    column: 17
+                }
+            ]
+        },
+        {
+            text: "憂鬱でないこともない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないこともない",
+                    column: 9
+                }
+            ]
+        },
+        {
+            text: "そういえないこともないですが......",
+            errors: [
+                {
+                    message: "二重否定: 〜ないこともない",
+                    column: 10
+                }
+            ]
         }
+
     ]
 });
