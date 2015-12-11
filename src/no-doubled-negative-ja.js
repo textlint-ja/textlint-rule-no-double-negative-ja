@@ -2,7 +2,7 @@
 "use strict";
 // tokens -> event emitter -> return check
 import {getTokenizer} from "kuromojin";
-import NakumonaiRule from "./rules/なくもない";
+import NakumonaiRule from "./rules/なくは-ない";
 import NidemoNaiRule from "./rules/ないでも-ない";
 export default function (context) {
     const {Syntax,getSource, report,RuleError} = context;
