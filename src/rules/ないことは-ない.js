@@ -21,7 +21,7 @@ export default function (context) {
         },
         {
             "basic_form": ["ない", "無い"]
-            //"pos": "形容詞" || "助動詞"
+            //"pos": ["形容詞", "助動詞"]
         }
     ]);
     const matchPatternないこともない = matchTokenStream([
