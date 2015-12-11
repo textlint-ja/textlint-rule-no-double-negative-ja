@@ -12,7 +12,7 @@ export default function (context) {
             "basic_form": "ない"
         },
         {
-            "surface_form": "もの",
+            "reading": "モノ",// 漢字に対応するため
             "pos": "名詞"
         },
         {
@@ -33,7 +33,7 @@ export default function (context) {
             "basic_form": "ない"
         },
         {
-            "surface_form": "もの",
+            "reading": "モノ",// 漢字に対応するため
             "pos": "名詞"
         },
         {

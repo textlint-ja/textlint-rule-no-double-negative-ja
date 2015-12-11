@@ -72,7 +72,25 @@ tester.run("no-doubled-negative", rule, {
             ]
         },
         {
+            text: "確かにそういった懸念はない事はない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないことはない",
+                    column: 16
+                }
+            ]
+        },
+        {
             text: "憂鬱でないこともない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないこともない",
+                    column: 9
+                }
+            ]
+        },
+        {
+            text: "憂鬱でないコトもない。",
             errors: [
                 {
                     message: "二重否定: 〜ないこともない",
@@ -100,11 +118,29 @@ tester.run("no-doubled-negative", rule, {
             ]
         },
         {
+            text: "ない訳でもないですが",
+            errors: [
+                {
+                    message: "二重否定: 〜ないわけでもない",
+                    column: 6
+                }
+            ]
+        },
+        {
             text: "ないわけではないですが",
             errors: [
                 {
                     message: "二重否定: 〜ないわけではない",
                     column: 7
+                }
+            ]
+        },
+        {
+            text: "ない訳ではないですが",
+            errors: [
+                {
+                    message: "二重否定: 〜ないわけではない",
+                    column: 6
                 }
             ]
         }
