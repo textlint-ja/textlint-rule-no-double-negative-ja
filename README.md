@@ -3,7 +3,14 @@
 [二重否定](https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%87%8D%E5%90%A6%E5%AE%9A_(%E8%A8%80%E8%AA%9E%E5%AD%A6) "二重否定")を検出する[textlint](https://github.com/textlint/textlint "textlint")ルールです。
 
 > ✘ それが事件の発端だったといえなくもない。
+
+二重否定: 〜なくもない
+
 > ✘ 確かにそういった懸念はない事はない。
+
+二重否定: 〜ないこともない
+
+などの二重否定を検出することができます。
 
 二重否定の用法については[<研究論文>二重否定表現「～なくは/ もない」「～ないでも/ はない」「～ないことは/ もない」「～ないものでは/ もない」の使い分けを巡って](http://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/187059/1/Ronko3_043.pdf "Ronko3_043.pdf")を参照してください。
 
