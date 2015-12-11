@@ -13,11 +13,18 @@
   },
   "version": "1.0.0",
   "description": "二重否定をチェックするtextlint rule",
-  "main": "index.js",
+  "main": "lib/no-doubled-negative-ja-test.js",
+  "files": [
+    "lib",
+    "src"
+  ],
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "watch": "babel src --out-dir lib --watch --source-maps",
+    "prepublish": "npm run --if-present build",
     "test": "mocha"
   },
   "keywords": [
