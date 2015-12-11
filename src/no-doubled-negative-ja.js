@@ -6,12 +6,14 @@ import NakumonaiRule from "./rules/なくは-ない";
 import NidemoNaiRule from "./rules/ないでも-ない";
 import NimonodehaRule from "./rules/ないものでは-ない";
 import NikotohanaiRule from "./rules/ないことは-ない";
+import NiwakedehanaiRule from "./rules/ないわけでは-ない";
 export default function (context) {
     const {Syntax,getSource, report,RuleError} = context;
     const ruleなくもない = NakumonaiRule(context);
     const ruleないでもない = NidemoNaiRule(context);
     const ruleないものではない = NimonodehaRule(context);
     const ruleないことはない = NikotohanaiRule(context);
+    const ruleないわけではない = NiwakedehanaiRule(context);
     return {
         [Syntax.Str](node){
             const text = getSource(node);
@@ -29,6 +31,7 @@ export default function (context) {
                     pushError(ruleないでもない(token));
                     pushError(ruleないものではない(token));
                     pushError(ruleないことはない(token));
+                    pushError(ruleないわけではない(token));
                 });
             }).then(()=> {
                 results.forEach(error => {

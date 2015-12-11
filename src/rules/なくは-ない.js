@@ -9,21 +9,7 @@
 import matchTokenStream from "./../matchTokenStream";
 export default function (context) {
     const {RuleError} = context;
-    const monaiTokens = [
-        {
-            "basic_form": "ない"
-        },
-        {
-            "surface_form": "は",
-            "pos": "助詞"
-        },
-        {
-            "basic_form": "ない",
-            "pos": "形容詞"
-        }
-    ];
-
-    const nakuhaTokens = [
+    const matchPatternなくもない = matchTokenStream([
         {
             "basic_form": "ない"
         },
@@ -35,9 +21,20 @@ export default function (context) {
             "basic_form": "ない",
             "pos": "形容詞"
         }
-    ];
-    const matchPatternなくもない = matchTokenStream(nakuhaTokens);
-    const matchPatternなくはない = matchTokenStream(monaiTokens);
+    ]);
+    const matchPatternなくはない = matchTokenStream([
+        {
+            "basic_form": "ない"
+        },
+        {
+            "surface_form": "は",
+            "pos": "助詞"
+        },
+        {
+            "basic_form": "ない",
+            "pos": "形容詞"
+        }
+    ]);
     return (token) => {
         if (matchPatternなくもない(token)) {
             return new RuleError("二重否定: 〜なくもない", {

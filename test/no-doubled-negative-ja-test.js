@@ -88,7 +88,25 @@ tester.run("no-doubled-negative", rule, {
                     column: 10
                 }
             ]
+        },
+        // e
+        {
+            text: "ないわけでもないですが",
+            errors: [
+                {
+                    message: "二重否定: 〜ないわけでもない",
+                    column: 7
+                }
+            ]
+        },
+        {
+            text: "ないわけではないですが",
+            errors: [
+                {
+                    message: "二重否定: 〜ないわけではない",
+                    column: 7
+                }
+            ]
         }
-
     ]
 });
