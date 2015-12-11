@@ -36,14 +36,18 @@ export default function nakumonai(context) {
             "pos": "形容詞"
         }
     ];
-    const matchPatternNaku = matchTokenStream(nakuhaTokens);
-    const matchPatternMonai = matchTokenStream(monaiTokens);
+    const matchPatternなくもない = matchTokenStream(nakuhaTokens);
+    const matchPatternなくはない = matchTokenStream(monaiTokens);
     return (token) => {
-        if (matchPatternNaku(token) || matchPatternMonai(token)) {
-            // (a)「~なくは / もない」
-            return new RuleError("二重否定: 「~なく」(否定助動詞 / 否定形容詞)「ない」の連用形)+とりたて助詞「は / も」+ 補助形容詞「ない」", {
+        if (matchPatternなくもない(token)) {
+            return new RuleError("二重否定: 〜なくもない", {
                 column: token.word_position - 1
-            })
+            });
         }
-    }
+        if (matchPatternなくはない(token)) {
+            return new RuleError("二重否定: 〜なくはない", {
+                column: token.word_position - 1
+            });
+        }
+    };
 }

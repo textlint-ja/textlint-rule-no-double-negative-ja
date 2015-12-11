@@ -8,6 +8,7 @@
 import matchTokenStream from "./../matchTokenStream";
 export default function (context) {
     const {RuleError} = context;
+
     const monaiTokens = [
         {
             "basic_form": "ない"
@@ -45,14 +46,18 @@ export default function (context) {
             "pos": "形容詞"
         }
     ];
-    const matchPatternNaku = matchTokenStream(nakuhaTokens);
-    const matchPatternMonai = matchTokenStream(monaiTokens);
+    const matchPatternないでもない = matchTokenStream(nakuhaTokens);
+    const matchPatternないではない = matchTokenStream(monaiTokens);
     return (token) => {
-        if (matchPatternNaku(token) || matchPatternMonai(token)) {
-            // (a)「~なくは / もない」
-            return new RuleError("二重否定: ~ない(否定助動詞/否定形容詞「ない」の連体形)+連用形「で」+とりたて助詞「も / は」+補助形容詞「ない」", {
+        if (matchPatternないでもない(token)) {
+            return new RuleError("二重否定: 〜ないでもない", {
                 column: token.word_position - 1
-            })
+            });
         }
-    }
+        if (matchPatternないではない(token)) {
+            return new RuleError("二重否定: 〜ないではない", {
+                column: token.word_position - 1
+            });
+        }
+    };
 }
