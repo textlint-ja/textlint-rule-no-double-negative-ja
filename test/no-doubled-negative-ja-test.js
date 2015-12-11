@@ -4,6 +4,7 @@ var tester = new TextLintTester();
 tester.run("no-doubled-negative", rule, {
     valid: [],
     invalid: [
+        // a
         {
             text: "だが、それが事件の発端だったといえなくもない。",
             errors: [
@@ -40,8 +41,25 @@ tester.run("no-doubled-negative", rule, {
                     column: 20
                 }
             ]
+        },
+        // c
+        {
+            text: "どんな窃視的行為に出ないものでもない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないものでもない",
+                    column: 17
+                }
+            ]
+        },
+        {
+            text: "これらの投与が決して避けられないものではなかったことが、不条理な無念さで患者たち、そして死者たちを眠らせない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないものではない",
+                    column: 21
+                }
+            ]
         }
-
-
     ]
 });

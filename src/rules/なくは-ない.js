@@ -7,7 +7,7 @@
     も: いや、本音を言えば、それよりこちらの方が大事ではないかという思いもなくはなかった。
  */
 import matchTokenStream from "./../matchTokenStream";
-export default function nakumonai(context) {
+export default function (context) {
     const {RuleError} = context;
     const monaiTokens = [
         {
