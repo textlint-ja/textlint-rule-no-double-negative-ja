@@ -11,27 +11,27 @@ export default function (context) {
     const {RuleError} = context;
     const matchPatternなくもない = matchTokenStream([
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
         },
         {
             "surface_form": "も",
             "pos": "助詞"
         },
         {
-            "basic_form": "ない",
+            "basic_form": ["ない", "無い"],
             "pos": "形容詞"
         }
     ]);
     const matchPatternなくはない = matchTokenStream([
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
         },
         {
             "surface_form": "は",
             "pos": "助詞"
         },
         {
-            "basic_form": "ない",
+            "basic_form": ["ない", "無い"],
             "pos": "形容詞"
         }
     ]);

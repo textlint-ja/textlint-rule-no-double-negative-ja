@@ -3,8 +3,11 @@
 function matchToken(token, expectShape) {
     return Object.keys(expectShape).every(key => {
         const actualValue = token[key];
-        const expectedValue = expectShape[key];
-        return actualValue === expectedValue;
+        // 値は複数の場合もある
+        const expectedValues = Array.isArray(expectShape[key]) ? expectShape[key] : [expectShape[key]];
+        return expectedValues.some(expectedValue => {
+            return actualValue === expectedValue;
+        });
     })
 }
 export default function expectTokenStream(tokenStream) {

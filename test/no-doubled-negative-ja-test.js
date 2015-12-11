@@ -14,6 +14,15 @@ tester.run("no-doubled-negative", rule, {
                 }
             ]
         },
+        {// 漢字
+            text: "だが、それが事件の発端だったといえ無くも無い。",
+            errors: [
+                {
+                    message: "二重否定: 〜なくもない",
+                    column: 21
+                }
+            ]
+        },
         {
             text: "いや、本音を言えば、それよりこちらの方が大事ではないかという思いもなくはなかった。",
             errors: [
@@ -45,6 +54,15 @@ tester.run("no-doubled-negative", rule, {
         // c
         {
             text: "どんな窃視的行為に出ないものでもない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないものでもない",
+                    column: 17
+                }
+            ]
+        },
+        {// 漢字
+            text: "どんな窃視的行為に出ないものでも無い。",
             errors: [
                 {
                     message: "二重否定: 〜ないものでもない",
@@ -135,7 +153,7 @@ tester.run("no-doubled-negative", rule, {
                 }
             ]
         },
-        {
+        {// 漢字
             text: "ない訳ではないですが",
             errors: [
                 {

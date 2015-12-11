@@ -9,7 +9,7 @@ export default function (context) {
     const {RuleError} = context;
     const matchPatternないことはない = matchTokenStream([
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
         },
         {
             "reading": "コト",// 漢字に対応するため
@@ -20,13 +20,13 @@ export default function (context) {
             "pos": "助詞"
         },
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
             //"pos": "形容詞" || "助動詞"
         }
     ]);
     const matchPatternないこともない = matchTokenStream([
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
         },
         {
             "reading": "コト",// 漢字に対応するため
@@ -37,7 +37,7 @@ export default function (context) {
             "pos": "助詞"
         },
         {
-            "basic_form": "ない",
+            "basic_form": ["ない", "無い"],
             "pos": "形容詞"
         }
     ]);

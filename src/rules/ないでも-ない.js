@@ -11,7 +11,7 @@ export default function (context) {
 
     const monaiTokens = [
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
         },
         {
             "surface_form": "で",
@@ -23,14 +23,14 @@ export default function (context) {
             "pos": "助詞"
         },
         {
-            "basic_form": "ない",
+            "basic_form": ["ない", "無い"],
             "pos": "形容詞"
         }
     ];
 
     const nakuhaTokens = [
         {
-            "basic_form": "ない"
+            "basic_form": ["ない", "無い"]
         },
         {
             "surface_form": "で",
@@ -42,7 +42,7 @@ export default function (context) {
             "pos": "助詞"
         },
         {
-            "basic_form": "ない",
+            "basic_form": ["ない", "無い"],
             "pos": "形容詞"
         }
     ];
