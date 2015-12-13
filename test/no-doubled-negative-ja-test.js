@@ -161,6 +161,25 @@ tester.run("no-doubled-negative", rule, {
                     column: 6
                 }
             ]
+        },
+        // f
+        {
+            text: "問題ないと言い切れない",
+            errors: [
+                {
+                    message: "二重否定: 〜ないといいきれない",
+                    column: 10
+                }
+            ]
+        },
+        {
+            text: "問題ないとは言い切れない",
+            errors: [
+                {
+                    message: "二重否定: 〜ないとはいいきれない",
+                    column: 11
+                }
+            ]
         }
     ]
 });
