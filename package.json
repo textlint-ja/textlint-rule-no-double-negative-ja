@@ -13,7 +13,7 @@
   },
   "version": "1.0.0",
   "description": "二重否定をチェックするtextlint rule",
-  "main": "lib/no-doubled-negative-ja-test.js",
+  "main": "lib/no-doubled-negative-ja.js",
   "files": [
     "lib",
     "src"
