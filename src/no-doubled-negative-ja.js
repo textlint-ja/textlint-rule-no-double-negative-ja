@@ -2,20 +2,20 @@
 "use strict";
 // tokens -> event emitter -> return check
 import {getTokenizer} from "kuromojin";
-import NakumonaiRule from "./rules/なくは-ない";
-import NidemoNaiRule from "./rules/ないでも-ない";
-import NimonodehaRule from "./rules/ないものでは-ない";
-import NikotohanaiRule from "./rules/ないことは-ない";
-import NiwakedehanaiRule from "./rules/ないわけでは-ない";
-import NaitohaiikirenaiRule from "./rules/ないとはいいきれ-ない";
+import なくはない from "./rules/nakuha-nai";
+import ないでもない from "./rules/naidemo-nai";
+import ないものではない from "./rules/naimonodeha-nai";
+import ないことはない from "./rules/naikotoha-nai";
+import ないわけではない from "./rules/naiwakedeha-nai";
+import ないとはいいきれない from "./rules/naitohaiikire-nai";
 export default function (context) {
     const {Syntax,getSource, report,RuleError} = context;
-    const ruleなくもない = NakumonaiRule(context);
-    const ruleないでもない = NidemoNaiRule(context);
-    const ruleないものではない = NimonodehaRule(context);
-    const ruleないことはない = NikotohanaiRule(context);
-    const ruleないわけではない = NiwakedehanaiRule(context);
-    const ruleないとはいいきれない = NaitohaiikirenaiRule(context);
+    const ruleなくもない = なくはない(context);
+    const ruleないでもない = ないでもない(context);
+    const ruleないものではない = ないものではない(context);
+    const ruleないことはない = ないことはない(context);
+    const ruleないわけではない = ないわけではない(context);
+    const ruleないとはいいきれない = ないとはいいきれない(context);
     return {
         [Syntax.Str](node){
             const text = getSource(node);
