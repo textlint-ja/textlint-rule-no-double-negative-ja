@@ -49,12 +49,12 @@ export default function (context) {
     return (token) => {
         if (matchPatternないとはかぎらない(token)) {
             return new RuleError("二重否定: 〜ないとはかぎらない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
         if (matchPatternないともかぎらない(token)) {
             return new RuleError("二重否定: 〜ないともかぎらない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
     };

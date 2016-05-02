@@ -44,12 +44,12 @@ export default function (context) {
     return (token) => {
         if (matchPatternないことはない(token)) {
             return new RuleError("二重否定: 〜ないことはない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
         if (matchPatternないこともない(token)) {
             return new RuleError("二重否定: 〜ないこともない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
     };

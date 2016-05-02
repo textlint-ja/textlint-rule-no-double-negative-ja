@@ -51,12 +51,12 @@ export default function (context) {
     return (token) => {
         if (matchPatternないといいきれない(token)) {
             return new RuleError("二重否定: 〜ないといいきれない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
         if (matchPatternないとはいいきれない(token)) {
             return new RuleError("二重否定: 〜ないとはいいきれない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
     };

@@ -38,12 +38,12 @@ export default function (context) {
     return (token) => {
         if (matchPatternなくもない(token)) {
             return new RuleError("二重否定: 〜なくもない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
         if (matchPatternなくはない(token)) {
             return new RuleError("二重否定: 〜なくはない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
     };

@@ -50,12 +50,12 @@ export default function (context) {
     return (token) => {
         if (matchPatternないわけでもない(token)) {
             return new RuleError("二重否定: 〜ないわけでもない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
         if (matchPatternないわけではない(token)) {
             return new RuleError("二重否定: 〜ないわけではない", {
-                column: token.word_position - 1
+                index: token.word_position - 1
             });
         }
     };
