@@ -23,6 +23,16 @@ tester.run("no-doubled-negative", rule, {
                 }
             ]
         },
+        {// multiline
+            text: "いや、\n本音を言えば、\nそれよりこちらの方が大事ではないかという思いもなくはなかった。",
+            errors: [
+                {
+                    message: "二重否定: 〜なくはない",
+                    line: 3,
+                    column: 27
+                }
+            ]
+        },
         {
             text: "いや、本音を言えば、それよりこちらの方が大事ではないかという思いもなくはなかった。",
             errors: [
