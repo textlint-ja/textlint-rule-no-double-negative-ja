@@ -28,6 +28,7 @@
     "test": "mocha"
   },
   "keywords": [
+    "${newKeyword}",
     "textlint"
   ],
   "devDependencies": {
