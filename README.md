@@ -1,4 +1,4 @@
-# textlint-rule-no-double-negative-ja [![Build Status](https://travis-ci.org/azu/textlint-rule-no-double-negative-ja.svg?branch=master)](https://travis-ci.org/azu/textlint-rule-no-double-negative-ja)
+# textlint-rule-no-double-negative-ja [![Build Status](https://travis-ci.org/textlint-ja/textlint-rule-no-double-negative-ja.svg?branch=master)](https://travis-ci.org/textlint-ja/textlint-rule-no-double-negative-ja)
 
 [二重否定](https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%87%8D%E5%90%A6%E5%AE%9A_(%E8%A8%80%E8%AA%9E%E5%AD%A6) "二重否定")を検出する[textlint](https://github.com/textlint/textlint "textlint")ルールです。
 
