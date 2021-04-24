@@ -5,8 +5,9 @@
     ~ない(否定助動詞 / 否定形容詞の連体形) + 形式名詞「こと」+ とりたて助詞「は / も」+ 形容詞「ない」
  */
 import matchTokenStream from "./../matchTokenStream";
+
 export default function (context) {
-    const {RuleError} = context;
+    const { RuleError } = context;
     const matchPatternないことはない = matchTokenStream([
         {
             "basic_form": ["ない", "無い"]
@@ -36,10 +37,18 @@ export default function (context) {
             "surface_form": "も",
             "pos": "助詞"
         },
-        {
-            "basic_form": ["ない", "無い"],
-            "pos": "形容詞"
-        }
+        [
+            // ないこともないでしょう。
+            {
+                "basic_form": ["ない", "無い"],
+                "conjugated_type": ["特殊・ナイ"]
+            },
+            // ないこともない。
+            {
+                "basic_form": ["ない", "無い"],
+                "pos": "形容詞"
+            }
+        ]
     ]);
     return (token) => {
         if (matchPatternないことはない(token)) {
