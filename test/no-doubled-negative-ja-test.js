@@ -135,6 +135,15 @@ tester.run("no-doubled-negative", rule, {
                 }
             ]
         },
+        {
+            text: "そういう話なら、ないこともないでしょう。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないこともない",
+                    column: 14
+                }
+            ]
+        },
         // e
         {
             text: "ないわけでもないですが",
@@ -209,6 +218,16 @@ tester.run("no-doubled-negative", rule, {
                     column: 9
                 }
             ]
-        }
+        },
+        // 3重否定
+        {
+            text: "憂鬱でないこともないこともない。",
+            errors: [
+                {
+                    message: "二重否定: 〜ないこともない",
+                    column: 9
+                }
+            ]
+        },
     ]
 });
