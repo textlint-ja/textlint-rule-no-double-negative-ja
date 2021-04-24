@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/textlint-ja/textlint-rule-no-double-negative-ja/issues"
   },
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "二重否定をチェックするtextlint rule",
   "main": "lib/no-doubled-negative-ja.js",
   "files": [
