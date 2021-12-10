@@ -1,7 +1,7 @@
 // LICENSE : MIT
 "use strict";
 // tokens -> event emitter -> return check
-import {getTokenizer} from "kuromojin";
+import {tokenize} from "kuromojin";
 import なくはない from "./rules/nakuha-nai";
 import ないでもない from "./rules/naidemo-nai";
 import ないものではない from "./rules/naimonodeha-nai";
@@ -28,9 +28,7 @@ export default function (context) {
                     results.push(error);
                 }
             };
-            return getTokenizer().then(tokenizer => {
-                return tokenizer.tokenizeForSentence(text);
-            }).then(tokens => {
+            return tokenize(text).then(tokens => {
                 tokens.forEach(token => {
                     pushError(ruleなくもない(token));
                     pushError(ruleないでもない(token));
