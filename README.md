@@ -25,12 +25,8 @@
 
 ```js
 {
-    "rules"
-:
-    {
-        "no-double-negative-ja"
-    :
-        true
+    "rules": {
+        "no-double-negative-ja": true
     }
 }
 ```
